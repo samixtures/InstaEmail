@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOe-my-zX5">
+                                <rect key="frame" x="36.666666666666657" y="318" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="75w-FK-zLr"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="yGL-tp-vQ2"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bje-Qg-WSd">
+                                <rect key="frame" x="157.66666666666666" y="638" width="78" height="42.666666666666629"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Send">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="sendPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L7b-AA-e2D"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="djZ-Bb-n8X">
+                                <rect key="frame" x="60" y="274" width="272" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8N-aQ-3e2">
+                                        <rect key="frame" x="0.0" y="0.0" width="60.333333333333336" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...and feeling..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeQ-Pd-Gba">
+                                        <rect key="frame" x="160.33333333333334" y="0.0" width="111.66666666666666" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...about it." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRb-fM-PWQ">
+                                <rect key="frame" x="134.33333333333334" y="536" width="124.66666666666666" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type a note here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kDe-36-NPe">
+                                <rect key="frame" x="103" y="184" width="274" height="38.333333333333314"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="doneEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="p09-ny-nh0"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instant Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgc-ev-tBg">
+                                <rect key="frame" x="114" y="100" width="165" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwn-yF-pM4">
+                                <rect key="frame" x="16" y="188" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bje-Qg-WSd" firstAttribute="top" secondItem="fRb-fM-PWQ" secondAttribute="bottom" constant="30" id="2m6-RR-kU1"/>
+                            <constraint firstItem="Bje-Qg-WSd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8pX-0m-QdN"/>
+                            <constraint firstItem="Bje-Qg-WSd" firstAttribute="top" secondItem="fRb-fM-PWQ" secondAttribute="bottom" constant="66" id="Dgr-iO-ABj"/>
+                            <constraint firstItem="xOe-my-zX5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HAJ-Ga-p47"/>
+                            <constraint firstItem="xOe-my-zX5" firstAttribute="top" secondItem="djZ-Bb-n8X" secondAttribute="bottom" constant="30" id="Se8-NL-dvl"/>
+                            <constraint firstItem="fRb-fM-PWQ" firstAttribute="top" secondItem="xOe-my-zX5" secondAttribute="bottom" constant="2" id="TQh-K0-Mfv"/>
+                            <constraint firstItem="fRb-fM-PWQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zta-QE-CaO"/>
+                            <constraint firstItem="djZ-Bb-n8X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ckV-BE-EaM"/>
+                            <constraint firstItem="xOe-my-zX5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eVp-bh-O68"/>
+                            <constraint firstItem="fRb-fM-PWQ" firstAttribute="top" secondItem="xOe-my-zX5" secondAttribute="bottom" constant="15" id="p2F-wm-RRW"/>
+                            <constraint firstItem="fRb-fM-PWQ" firstAttribute="top" secondItem="xOe-my-zX5" secondAttribute="bottom" constant="2" id="ph7-D0-tmO"/>
+                            <constraint firstItem="djZ-Bb-n8X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vZm-95-n45"/>
+                            <constraint firstItem="xOe-my-zX5" firstAttribute="top" secondItem="djZ-Bb-n8X" secondAttribute="bottom" constant="30" id="xkw-jS-Wsg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailPicker" destination="xOe-my-zX5" id="Pfn-cM-Hm9"/>
+                        <outlet property="notesField" destination="kDe-36-NPe" id="MhB-KX-7hn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20.610687022900763" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
